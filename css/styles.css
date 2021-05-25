@@ -1,0 +1,59 @@
+body {
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #562b81;
+  color: white;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+}
+
+button {
+  background-color: #562b81;
+  color: white;
+  font-family: 'Noto Sans KR', sans-serif;
+  width: 75px;
+  height: 30px;
+  border: 0 solid #562b81;
+  border-radius: 5px 5px;
+  font-weight: 0;
+}
+
+input,
+textarea {
+  font-size: 20px;
+}
+
+textarea {
+  resize: none;
+}
+
+.new-entry {
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 972px;
+  padding-top: 20px;
+}
+
+.form-text {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: left;
+}
+
+/* .box {
+  width: 370px;
+  height: 50px;
+}
+
+.notes-box {
+  width: 800px;
+  height: 150px;
+} */

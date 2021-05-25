@@ -31,4 +31,14 @@
   .column-half {
     width: 50%;
   }
+
+  .box {
+    width: 370px;
+    height: 50px;
+  }
+
+  .notes-box {
+    width: 800px;
+    height: 150px;
+  }
 }
