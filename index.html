@@ -37,19 +37,25 @@
             <img class="column-full" src="images/placeholder-image-square.jpg" alt="placeholder">
           </div>
           <div class="column-half">
-            <h4 class="form-text">Title</h4>
-            <input type="text" class="box" name="title" required>
-            <h4 class="form-text">Photo URL</h4>
-            <input type="text" class="box photoURL" name="photo URL" required>
+            <label for="title">
+              <h4 class="form-text">Title</h4>
+            </label>
+            <input id="title" type="text" class="box" name="title" required>
+            <label for="photo-url">
+              <h4 class="form-text">Photo URL</h4>
+            </label>
+            <input id="photo-url" type="text" class="box photoURL" name="photo URL" required>
           </div>
         </div>
         <div class="row">
             <div class="column-full">
-              <h4 class="form-text">Notes</h4>
-              <textarea type="text" class="notes-box" name="notes" required></textarea>
+              <label for="notes">
+                <h4 class="form-text">Notes</h4>
+              </label>
+              <textarea id="notes" type="text" class="notes-box" name="notes" required></textarea>
             </div>
             <div class="button">
-              <button type="submit">SAVE</button>
+              <button type="submit" class="buttoned">SAVE</button>
             </div>
         </div>
       </form>

@@ -1,3 +1,12 @@
 /* global data */
 /* exported data */
-document.querySelector('photoURL');
+var $photoURL = document.querySelector('.photoURL');
+// var $button = document.querySelector('buttoned');
+
+$photoURL.addEventListener('input', function (event) {
+  $photoURL.setAttribute('src', event.target.value);
+});
+
+// $button.addEventListener('submit' function (event) {
+
+// })

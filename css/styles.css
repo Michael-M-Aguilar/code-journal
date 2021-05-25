@@ -13,7 +13,7 @@ button {
   background-color: #562b81;
   color: white;
   font-family: 'Noto Sans KR', sans-serif;
-  width: 75px;
+  width: 70px;
   height: 30px;
   border: 0 solid #562b81;
   border-radius: 5px 5px;
@@ -37,7 +37,7 @@ textarea {
 .button {
   display: flex;
   justify-content: flex-end;
-  max-width: 972px;
+  max-width: 950px;
   padding-top: 20px;
 }
 
@@ -46,6 +46,7 @@ textarea {
   font-size: 20px;
   font-weight: bolder;
   text-align: left;
+  margin-top: 1rem;
 }
 
 /* .box {
