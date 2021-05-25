@@ -37,7 +37,7 @@ textarea {
 .button {
   display: flex;
   justify-content: flex-end;
-  max-width: 950px;
+  max-width: 810px;
   padding-top: 20px;
 }
 
@@ -49,12 +49,8 @@ textarea {
   margin-top: 1rem;
 }
 
-/* .box {
-  width: 370px;
-  height: 50px;
+.header {
+  display: flex;
+  justify-content: center;
+  max-width: 920px;
 }
-
-.notes-box {
-  width: 800px;
-  height: 150px;
-} */
