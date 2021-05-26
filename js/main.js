@@ -62,27 +62,22 @@ function renderElements(element) {
   divThird.setAttribute('class', 'column-half');
 
   var header = document.createElement('h3');
-  var textHeader = document.createTextNode(element.name);
-  header.appendChild(textHeader);
+  header.textContent = element.title;
 
   var para = document.createElement('p');
-  var textPara = document.createTextNode(element.notes);
-  para.appendChild(textPara);
+  para.textContent = element.notes;
 
   div.appendChild(divSecond);
   divSecond.appendChild(img);
   divSecond.appendChild(divThird);
   divThird.appendChild(header);
   divThird.appendChild(para);
-
-  var position = document.getElementsByClassName('.position');
-  position.appendChild(div);
   return div;
 }
 
 window.addEventListener('DOMContentLoaded', function (event) {
   var queryPosition = document.querySelector('.position');
-  for (var i = 0; i < queryPosition.length; i++) {
+  for (var i = 0; i < data.entries.length; i++) {
     var example = renderElements(data.entries[i]);
     queryPosition.append(example);
   }
