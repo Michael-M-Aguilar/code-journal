@@ -18,14 +18,18 @@
 </head>
 <body>
   <header>
-    <div class="header">
-      <div class="row">
-        <h2 class="column-full"> Code Journal</h2>
+    <div class="header tab-container">
+      <div class="row tab">
+        <h2 class="column-full tab"> Code Journal</h2>
       </div>
+      <div class="row tab">
+        <h2 class="column-full tab" data-view="entries">Entries</h2>
+      </div>
+      <!-- <div class="tab" data-view="entries"></div> -->
     </div>
   </header>
   <main>
-    <div class="container" data-view="entry-form">
+    <div class="container view" data-view="entry-form">
       <form id="codeForm">
         <div class="row">
           <div class="column-full">
@@ -59,6 +63,39 @@
               <button type="submit" class="buttoned">SAVE</button>
           </div>
       </form>
+    </div>
+    <div class="container view hidden" data-view="entries">
+      <div class="row spaceBetween">
+        <h2>Entries</h2>
+        <button class="newButton">New</button>
+      </div>
+      <div class="justifyCenter">
+        <!-- <p>No entries have been reported</p> -->
+        <div class="unList column-full">
+          <ul>
+            <div class="column-full row padding">
+              <img class="column-half" src="images/placeholder-image-square.jpg" alt="placeholder">
+              <div class="column-half">
+                <h3>Ada Lovelace</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium qui odit deserunt, amet asperiores illum
+                excepturi, non ipsum nam nesciunt dolore quidem? Dolores nemo earum reprehenderit fugiat id eos vel? </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium qui odit deserunt, amet asperiores illum
+                excepturi, non ipsum nam nesciunt dolore quidem? Dolores nemo earum reprehenderit fugiat id eos vel?</p>
+              </div>
+            </div>
+            <div class="column-full row padding">
+              <img class="column-half" src="images/placeholder-image-square.jpg" alt="placeholder">
+              <div class="column-half">
+                <h3>Ada Lovelace</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium qui odit deserunt, amet asperiores illum
+                  excepturi, non ipsum nam nesciunt dolore quidem? Dolores nemo earum reprehenderit fugiat id eos vel? </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium qui odit deserunt, amet asperiores illum
+                  excepturi, non ipsum nam nesciunt dolore quidem? Dolores nemo earum reprehenderit fugiat id eos vel?</p>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
     </div>
   </main>
   <script src="js/data.js"></script>

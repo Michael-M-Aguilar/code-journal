@@ -54,3 +54,33 @@ textarea {
   justify-content: center;
   max-width: 920px;
 }
+
+.tab-container {
+  display: flex;
+  position: relative;
+}
+
+.tab {
+  cursor: pointer;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+  max-width: 885px;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.newButton {
+  margin-top: 1.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.padding {
+  padding-bottom: 25px;
+}

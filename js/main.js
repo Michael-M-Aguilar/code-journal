@@ -25,3 +25,24 @@ $form.addEventListener('submit', function (event) {
   $form.reset();
   $preview.setAttribute('src', 'images/placeholder-image-square.jpg');
 });
+
+var $tabContainer = document.querySelector('.tab-container');
+var $view = document.getElementsByClassName('view');
+
+$tabContainer.addEventListener('click', function (event) {
+  var dataView = event.target.getAttribute('data-view');
+  for (var j = 0; j < $view.length; j++) {
+    if ($view[j].getAttribute('data-view') !== dataView) {
+      $view[j].className = 'container view hidden';
+    } else {
+      $view[j].className = 'container view';
+    }
+  }
+});
+
+// var $newButton = document.querySelector('.newButton');
+
+// $newButton.addEventListener('click', function (event) {
+//   console.log(event.target);
+//   var dataView =
+// });
