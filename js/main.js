@@ -46,3 +46,16 @@ $tabContainer.addEventListener('click', function (event) {
 //   console.log(event.target);
 //   var dataView =
 // });
+
+// function renderElements(element) {
+//   var div = document.createElement('div');
+//   div.setAttribute('class', 'column-full');
+
+//   var divSecond = document.createElement('div');
+//   divSecond.setAttribute('class', 'column-full row padding');
+
+//   var img = document.createElement('img');
+//   img.setAttribute('class', 'column-half');
+//   img.setAttribute('src', 'form.');
+
+// }
