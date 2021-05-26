@@ -47,15 +47,43 @@ $tabContainer.addEventListener('click', function (event) {
 //   var dataView =
 // });
 
-// function renderElements(element) {
-//   var div = document.createElement('div');
-//   div.setAttribute('class', 'column-full');
+function renderElements(element) {
+  var div = document.createElement('div');
+  div.setAttribute('class', 'column-full');
 
-//   var divSecond = document.createElement('div');
-//   divSecond.setAttribute('class', 'column-full row padding');
+  var divSecond = document.createElement('div');
+  divSecond.setAttribute('class', 'column-full row padding');
 
-//   var img = document.createElement('img');
-//   img.setAttribute('class', 'column-half');
-//   img.setAttribute('src', 'form.');
+  var img = document.createElement('img');
+  img.setAttribute('class', 'column-half');
+  img.setAttribute('src', element.photoURL);
 
-// }
+  var divThird = document.createElement('div');
+  divThird.setAttribute('class', 'column-half');
+
+  var header = document.createElement('h3');
+  var textHeader = document.createTextNode(element.name);
+  header.appendChild(textHeader);
+
+  var para = document.createElement('p');
+  var textPara = document.createTextNode(element.notes);
+  para.appendChild(textPara);
+
+  div.appendChild(divSecond);
+  divSecond.appendChild(img);
+  divSecond.appendChild(divThird);
+  divThird.appendChild(header);
+  divThird.appendChild(para);
+
+  var position = document.getElementsByClassName('.position');
+  position.appendChild(div);
+  return div;
+}
+
+window.addEventListener('DOMContentLoaded', function (event) {
+  var queryPosition = document.querySelector('.position');
+  for (var i = 0; i < queryPosition.length; i++) {
+    var example = renderElements(data.entries[i]);
+    queryPosition.append(example);
+  }
+});
