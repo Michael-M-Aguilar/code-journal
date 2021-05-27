@@ -5,11 +5,27 @@ var $title = document.querySelector('#title');
 var $notes = document.querySelector('#notes');
 var $preview = document.querySelector('.preview');
 
+var $form = document.querySelector('#codeForm');
+var $mainPage = document.getElementById('mainPage');
+var $secondPage = document.getElementById('secondPage');
+
+var $tabContainer = document.querySelector('.tab-container');
+var $view = document.getElementsByClassName('view');
+var $newButton = document.querySelector('.newButton');
+var queryPosition = document.querySelector('.position');
+
+if (data.view === 'entry-form') {
+  $mainPage.className = 'container view';
+  $secondPage.className = 'container view hidden';
+}
+if (data.view === 'entries') {
+  $mainPage.className = 'container view hidden';
+  $secondPage.className = 'container view';
+}
+
 $photoURL.addEventListener('input', function (event) {
   document.getElementById('placeholderImg').src = event.target.value;
 });
-
-var $form = document.querySelector('#codeForm');
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -20,17 +36,22 @@ $form.addEventListener('submit', function (event) {
   formData.notes = $notes.value;
   formData.entryId = data.nextEntryId;
   data.nextEntryId++;
-
   data.entries.unshift(formData);
   $form.reset();
   $preview.setAttribute('src', 'images/placeholder-image-square.jpg');
+  // localStorage.setItem(data.view, 'entries');
+  $mainPage.className = 'container view hidden';
+  $secondPage.className = 'container view';
+  queryPosition.insertAdjacentElement('afterbegin', renderElements(data.entries[0]));
 });
-
-var $tabContainer = document.querySelector('.tab-container');
-var $view = document.getElementsByClassName('view');
 
 $tabContainer.addEventListener('click', function (event) {
   var dataView = event.target.getAttribute('data-view');
+  if (dataView === 'entry-form') {
+    data.view = 'entry-form';
+  } else {
+    data.view = 'entries';
+  }
   for (var j = 0; j < $view.length; j++) {
     if ($view[j].getAttribute('data-view') !== dataView) {
       $view[j].className = 'container view hidden';
@@ -40,12 +61,11 @@ $tabContainer.addEventListener('click', function (event) {
   }
 });
 
-// var $newButton = document.querySelector('.newButton');
-
-// $newButton.addEventListener('click', function (event) {
-//   console.log(event.target);
-//   var dataView =
-// });
+$newButton.addEventListener('click', function (event) {
+  localStorage.setItem(data.view, 'entry-form');
+  $mainPage.className = 'container view';
+  $secondPage.className = 'container view hidden';
+});
 
 function renderElements(element) {
   var div = document.createElement('div');
@@ -76,7 +96,6 @@ function renderElements(element) {
 }
 
 window.addEventListener('DOMContentLoaded', function (event) {
-  var queryPosition = document.querySelector('.position');
   for (var i = 0; i < data.entries.length; i++) {
     var example = renderElements(data.entries[i]);
     queryPosition.append(example);
