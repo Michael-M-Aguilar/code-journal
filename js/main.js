@@ -107,6 +107,10 @@ window.addEventListener('DOMContentLoaded', function (event) {
   }
 });
 
-// queryPosition.addEventListener('click', function (event) {
-
-// });
+queryPosition.addEventListener('click', function (event) {
+  // console.log(event.target.className);
+  if (event.target.className === 'fas fa-edit fa-lg') {
+    $mainPage.className = 'container view';
+    $secondPage.className = 'container view hidden';
+  }
+});
