@@ -29,6 +29,11 @@ textarea {
   resize: none;
 }
 
+h3,
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .new-entry {
   font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -53,4 +58,34 @@ textarea {
   display: flex;
   justify-content: center;
   max-width: 920px;
+}
+
+.tab-container {
+  display: flex;
+  position: relative;
+}
+
+.tab {
+  cursor: pointer;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+  max-width: 885px;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.newButton {
+  margin-top: 1.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.padding {
+  padding-bottom: 25px;
 }

@@ -18,14 +18,18 @@
 </head>
 <body>
   <header>
-    <div class="header">
-      <div class="row">
-        <h2 class="column-full"> Code Journal</h2>
+    <div class="header tab-container">
+      <div class="row tab">
+        <h2 class="column-full tab" data-view="entry-form"> Code Journal</h2>
       </div>
+      <div class="row tab">
+        <h2 class="column-full tab" data-view="entries">Entries</h2>
+      </div>
+      <!-- <div class="tab" data-view="entries"></div> -->
     </div>
   </header>
   <main>
-    <div class="container" data-view="entry-form">
+    <div id="mainPage" class="container view" data-view="entry-form">
       <form id="codeForm">
         <div class="row">
           <div class="column-full">
@@ -59,6 +63,17 @@
               <button type="submit" class="buttoned">SAVE</button>
           </div>
       </form>
+    </div>
+    <div id="secondPage" class="container view hidden" data-view="entries">
+      <div class="row spaceBetween">
+        <h2 class="new-entry">Entries</h2>
+        <button class="newButton">New</button>
+      </div>
+      <div class="justifyCenter">
+        <!-- <p>No entries have been reported</p> -->
+        <ul class="position">
+        </ul>
+      </div>
     </div>
   </main>
   <script src="js/data.js"></script>
