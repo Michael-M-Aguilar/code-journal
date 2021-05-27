@@ -29,6 +29,11 @@ textarea {
   resize: none;
 }
 
+h3,
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .new-entry {
   font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
