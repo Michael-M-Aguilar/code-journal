@@ -37,12 +37,14 @@ $form.addEventListener('submit', function (event) {
   formData.entryId = data.nextEntryId;
   data.nextEntryId++;
   data.entries.unshift(formData);
-  $form.reset();
+  // $form.reset();
   $preview.setAttribute('src', 'images/placeholder-image-square.jpg');
   // localStorage.setItem(data.view, 'entries');
   $mainPage.className = 'container view hidden';
   $secondPage.className = 'container view';
-  queryPosition.insertAdjacentElement('afterbegin', renderElements(data.entries[0]));
+  // queryPosition.insertAdjacentElement('afterbegin', renderElements(data.entries[0]));
+  data.view = 'entries';
+  location.reload();
 });
 
 $tabContainer.addEventListener('click', function (event) {
@@ -108,9 +110,19 @@ window.addEventListener('DOMContentLoaded', function (event) {
 });
 
 queryPosition.addEventListener('click', function (event) {
-  // console.log(event.target.className);
   if (event.target.className === 'fas fa-edit fa-lg') {
     $mainPage.className = 'container view';
     $secondPage.className = 'container view hidden';
+    // console.log(event.target.getAttribute('data-entry-id'));
+    var length = data.entries.length;
+    var $entryId = event.target.getAttribute('data-entry-id');
+    var toSubtract = length - $entryId;
+    data.editing = data.entries[toSubtract];
+    document.getElementById('placeholderImg').src = data.entries[toSubtract].photoURL;
+    $title.value = data.entries[toSubtract].title;
+    $photoURL.value = data.entries[toSubtract].photoURL;
+    $notes.value = data.entries[toSubtract].notes;
+    // location.reload();
   }
 });
+//
