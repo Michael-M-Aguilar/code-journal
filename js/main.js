@@ -84,6 +84,10 @@ function renderElements(element) {
   var header = document.createElement('h3');
   header.textContent = element.title;
 
+  var fontAwesome = document.createElement('i');
+  fontAwesome.setAttribute('class', 'fas fa-edit fa-lg');
+  fontAwesome.setAttribute('data-entry-id', element.entryId);
+
   var para = document.createElement('p');
   para.textContent = element.notes;
 
@@ -91,6 +95,7 @@ function renderElements(element) {
   divSecond.appendChild(img);
   divSecond.appendChild(divThird);
   divThird.appendChild(header);
+  divThird.appendChild(fontAwesome);
   divThird.appendChild(para);
   return div;
 }
@@ -101,3 +106,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
     queryPosition.append(example);
   }
 });
+
+// queryPosition.addEventListener('click', function (event) {
+
+// });
