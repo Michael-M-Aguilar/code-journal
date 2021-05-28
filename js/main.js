@@ -22,7 +22,7 @@ if (data.view === 'entries') {
   $mainPage.className = 'container view hidden';
   $secondPage.className = 'container view';
 }
-
+// The preview of the NEW picture when inserted in the form.
 $photoURL.addEventListener('input', function (event) {
   document.getElementById('placeholderImg').src = event.target.value;
 });
@@ -42,11 +42,13 @@ $form.addEventListener('submit', function (event) {
   // localStorage.setItem(data.view, 'entries');
   $mainPage.className = 'container view hidden';
   $secondPage.className = 'container view';
-  // queryPosition.insertAdjacentElement('afterbegin', renderElements(data.entries[0]));
+  queryPosition.insertAdjacentElement('afterbegin', renderElements(data.entries[0]));
   data.view = 'entries';
-  location.reload();
+  data.editing = null;
+  // location.reload();
 });
 
+// The switching of tabs in the header. Will also switch the data-view.
 $tabContainer.addEventListener('click', function (event) {
   var dataView = event.target.getAttribute('data-view');
   if (dataView === 'entry-form') {
@@ -69,6 +71,7 @@ $newButton.addEventListener('click', function (event) {
   $secondPage.className = 'container view hidden';
 });
 
+// DOM Tree creation under the parent UL.
 function renderElements(element) {
   var div = document.createElement('div');
   div.setAttribute('class', 'column-full');
@@ -101,7 +104,7 @@ function renderElements(element) {
   divThird.appendChild(para);
   return div;
 }
-
+// Assist in updating the window with the data.entries made.
 window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     var example = renderElements(data.entries[i]);
@@ -109,6 +112,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
   }
 });
 
+// Associated with the editing function
 queryPosition.addEventListener('click', function (event) {
   if (event.target.className === 'fas fa-edit fa-lg') {
     $mainPage.className = 'container view';
@@ -118,7 +122,9 @@ queryPosition.addEventListener('click', function (event) {
     var $entryId = event.target.getAttribute('data-entry-id');
     var toSubtract = length - $entryId;
     data.editing = data.entries[toSubtract];
+    // preview of the form if previous image
     document.getElementById('placeholderImg').src = data.entries[toSubtract].photoURL;
+    // how to fill in my form if editing
     $title.value = data.entries[toSubtract].title;
     $photoURL.value = data.entries[toSubtract].photoURL;
     $notes.value = data.entries[toSubtract].notes;
